@@ -5,3 +5,6 @@ class Item(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=5, decimal_places=2)
     expire = models.DateTimeField()
+
+    def __str__(self):
+        return f'{self.id}_{self.name}'
