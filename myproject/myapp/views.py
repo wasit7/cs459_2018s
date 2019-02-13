@@ -9,6 +9,10 @@ def current_datetime(request):
     html = "<html><body>It is now %s.</body></html>" % now
     return HttpResponse(html)
 
+def home(request):
+    context={'key':'value'}
+    return render(request, 'base.html', context)
+
 def item_list(request):
     html='''
         <ul>

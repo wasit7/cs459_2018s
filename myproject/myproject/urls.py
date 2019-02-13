@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('current_datetime/', views.current_datetime, name='current_datetime'),
     path('item_list/', views.item_list, name='item_list'),
+    path('',views.home, name='home'),
 ]\
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)\
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
