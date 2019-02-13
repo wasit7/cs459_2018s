@@ -10,7 +10,7 @@ def current_datetime(request):
     return HttpResponse(html)
 
 def home(request):
-    context={'key':'value'}
+    context={'key':'value', 'name':'Hello Wasit!'}
     return render(request, 'base.html', context)
 
 def item_list(request):
