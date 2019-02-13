@@ -14,12 +14,16 @@ def home(request):
     return render(request, 'home.html', context)
 
 def item_list(request):
-    html='''
-        <ul>
-            <li>Banana</li>
-            <li>Tea</li>
-            <li>Milk</li>
-    '''
-    for i in Item.objects.all():
-        html = html + '<li>%s %s %s %s %s</li>'%(i.name, i.description, i.price, i.expire, i.image.url)
-    return HttpResponse(html)
+    context = {'items' : Item.objects.all()}
+    return render(request, 'item_list.html', context)   
+
+# def item_list(request):
+#     html='''
+#         <ul>
+#             <li>Banana</li>
+#             <li>Tea</li>
+#             <li>Milk</li>
+#     '''
+#     for i in Item.objects.all():
+#         html = html + '<li>%s %s %s %s %s</li>'%(i.name, i.description, i.price, i.expire, i.image.url)
+#     return HttpResponse(html)
