@@ -11,7 +11,7 @@ def current_datetime(request):
 
 def home(request):
     context={'key':'value', 'name':'Hello Wasit!'}
-    return render(request, 'base.html', context)
+    return render(request, 'home.html', context)
 
 def item_list(request):
     html='''
@@ -21,5 +21,5 @@ def item_list(request):
             <li>Milk</li>
     '''
     for i in Item.objects.all():
-        html = html + '<li>%s %s %s %s</li>'%(i.name, i.description, i.price, i.expire)
+        html = html + '<li>%s %s %s %s %s</li>'%(i.name, i.description, i.price, i.expire, i.image.url)
     return HttpResponse(html)
