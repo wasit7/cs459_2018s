@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Customer, Car
+from .models import Customer, Car, Rent
 
 class CustomerAdmin(admin.ModelAdmin):
     fields = ('firstname', 'lastname', 'dob', 'tel')
@@ -15,3 +15,9 @@ class CarAdmin(admin.ModelAdmin):
     list_filter = ('brand','purchasing_date')
 
 admin.site.register(Car, CarAdmin)
+
+class RentAdmin(admin.ModelAdmin):
+    fields = ('start','stop','cost','car','customer')
+    list_display = ('start','stop','cost','car','customer')
+
+admin.site.register(Rent, RentAdmin)
